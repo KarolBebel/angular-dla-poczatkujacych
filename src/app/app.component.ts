@@ -14,4 +14,14 @@ export class AppComponent {
     { id: 2, name: 'Herbata zielona 100g', price: 24.50, description: 'Sencha z Japonii.', available: true },
     { id: 3, name: 'Młynek ręczny', price: 129.00, description: 'Stal nierdzewna, regulacja ziarna.', available: false },
   ];
+
+  boughtCount = 0;
+
+  onBought(id: number): void {
+    this.boughtCount++;
+  }
+
+  onRemoved(id: number): void {
+    this.products = this.products.filter(p => p.id !== id);
+  }
 }

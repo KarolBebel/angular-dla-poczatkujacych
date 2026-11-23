@@ -2,8 +2,15 @@
   <h1>🛍️ Warsztat Angular – mini-sklep</h1>
 
   @for (p of products; track p.id) {
-    <app-product-card [product]="p" />
+    <app-product-card
+      [product]="p"
+      (bought)="onBought($event)"
+      (removed)="onRemoved($event)" />
   } @empty {
     <p class="lead">Brak produktów w ofercie.</p>
+  }
+
+  @if (boughtCount > 0) {
+    <p class="lead">Kupiono: {{ boughtCount }}</p>
   }
 </main>

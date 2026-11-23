@@ -2,5 +2,6 @@
   <h2>{{ product.name }}</h2>
   <p class="price">{{ product.price }} zł</p>
   <p>{{ product.description }}</p>
-  <button [disabled]="!product.available">Kup</button>
+  <button (click)="bought.emit(product.id)" [disabled]="!product.available">Kup</button>
+  <button class="danger" (click)="removed.emit(product.id)">Usuń</button>
 </article>

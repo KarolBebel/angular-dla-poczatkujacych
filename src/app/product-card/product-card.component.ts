@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export interface Product {
   id: number;
@@ -16,4 +16,6 @@ export interface Product {
 })
 export class ProductCardComponent {
   @Input({ required: true }) product!: Product;
+  @Output() bought = new EventEmitter<number>();
+  @Output() removed = new EventEmitter<number>();
 }
