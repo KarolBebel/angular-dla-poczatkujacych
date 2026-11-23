@@ -1,0 +1,16 @@
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f7f7fa;
+  color: #222;
+  margin: 0;
+  padding: 2rem;
+}
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+.lead { color: #555; }
