@@ -1,16 +1,17 @@
 <main class="container">
   <h1>🛍️ Warsztat Angular – mini-sklep</h1>
 
-  <article class="card">
-    <h2>{{ product.name }}</h2>
-    <p class="price">{{ product.price }} zł</p>
-    <p>{{ product.description }}</p>
-    <button
-      (click)="buy()"
-      [disabled]="!product.available">
-      Kup
-    </button>
-  </article>
+  @for (p of products; track p.id) {
+    <article class="card">
+      <h2>{{ p.name }}</h2>
+      <p class="price">{{ p.price }} zł</p>
+      <p>{{ p.description }}</p>
+      <button (click)="buy()" [disabled]="!p.available">Kup</button>
+      <button class="danger" (click)="remove(p.id)">Usuń</button>
+    </article>
+  } @empty {
+    <p class="lead">Brak produktów w ofercie.</p>
+  }
 
   @if (boughtCount > 0) {
     <p class="lead">Kupiono: {{ boughtCount }}</p>
