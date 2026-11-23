@@ -1,6 +1,18 @@
 <main class="container">
-  <h1>Warsztat Angular – mini-sklep</h1>
-  <p class="lead">Zbudujemy razem listę produktów. Postępuj zgodnie z instrukcjami prowadzącego.</p>
+  <h1>🛍️ Warsztat Angular – mini-sklep</h1>
 
-  <!-- TODO: Moduł 1 – tutaj wyświetlisz kartę produktu -->
+  <article class="card">
+    <h2>{{ product.name }}</h2>
+    <p class="price">{{ product.price }} zł</p>
+    <p>{{ product.description }}</p>
+    <button
+      (click)="buy()"
+      [disabled]="!product.available">
+      Kup
+    </button>
+  </article>
+
+  @if (boughtCount > 0) {
+    <p class="lead">Kupiono: {{ boughtCount }}</p>
+  }
 </main>
