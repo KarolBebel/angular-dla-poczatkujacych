@@ -1,17 +1,10 @@
 import { Component } from '@angular/core';
-
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-  available: boolean;
-}
+import { Product, ProductCardComponent } from './product-card/product-card.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [ProductCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -21,14 +14,4 @@ export class AppComponent {
     { id: 2, name: 'Herbata zielona 100g', price: 24.50, description: 'Sencha z Japonii.', available: true },
     { id: 3, name: 'Młynek ręczny', price: 129.00, description: 'Stal nierdzewna, regulacja ziarna.', available: false },
   ];
-
-  boughtCount = 0;
-
-  buy(): void {
-    this.boughtCount++;
-  }
-
-  remove(id: number): void {
-    this.products = this.products.filter(p => p.id !== id);
-  }
 }

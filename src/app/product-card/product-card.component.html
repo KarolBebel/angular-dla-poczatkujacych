@@ -1,0 +1,6 @@
+<article class="card">
+  <h2>{{ product.name }}</h2>
+  <p class="price">{{ product.price }} zł</p>
+  <p>{{ product.description }}</p>
+  <button [disabled]="!product.available">Kup</button>
+</article>

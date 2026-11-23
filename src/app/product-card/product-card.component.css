@@ -1,0 +1,17 @@
+.card {
+  border: 1px solid #e5e5ec;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+.card h2 { margin: 0 0 .5rem; }
+.price { font-weight: 600; color: #1a7f37; }
+button {
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #1a73e8;
+  color: #fff;
+  cursor: pointer;
+}
+button:disabled { background: #a8a8b3; cursor: not-allowed; }

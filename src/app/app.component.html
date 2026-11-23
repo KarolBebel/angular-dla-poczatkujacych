@@ -2,18 +2,8 @@
   <h1>🛍️ Warsztat Angular – mini-sklep</h1>
 
   @for (p of products; track p.id) {
-    <article class="card">
-      <h2>{{ p.name }}</h2>
-      <p class="price">{{ p.price }} zł</p>
-      <p>{{ p.description }}</p>
-      <button (click)="buy()" [disabled]="!p.available">Kup</button>
-      <button class="danger" (click)="remove(p.id)">Usuń</button>
-    </article>
+    <app-product-card [product]="p" />
   } @empty {
     <p class="lead">Brak produktów w ofercie.</p>
-  }
-
-  @if (boughtCount > 0) {
-    <p class="lead">Kupiono: {{ boughtCount }}</p>
   }
 </main>
